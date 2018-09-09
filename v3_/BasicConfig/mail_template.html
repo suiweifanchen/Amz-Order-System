@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{date}} Sales Summary</title>
+    </head>
+    <body>
+        <h3>{{account}}</h3>
+        <h4>Daily Sales Summary</h4>
+        <table border="1" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <th>SKU</th>
+            <th>OrderedNum</th>
+            <th>Inventory</th>
+        </tr>
+        {% for item in orderitems %}
+        <tr>
+            <td align="right">{{item.SellerSKU}}</td>
+            <td align="right">{{item.QuantityOrdered}}</td>
+            <td align="right">{{item.InStockSupplyQuantity}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        <table border="1" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <th>Total Orders</th>
+                <td align="right">{{total_orders}}</td>
+            </tr>
+            <tr>
+                <th>Total Items</th>
+                <td align="right">{{total_items}}</td>
+            </tr>
+            <tr>
+                <th>Total Sales(USD)</th>
+                <td align="right">{{total_sales}}</td>
+          </tr>
+        </table>
+    </body>
+</html>
